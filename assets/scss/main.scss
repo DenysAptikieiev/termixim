@@ -1,0 +1,88 @@
+@import "mixins";
+
+main {
+  padding: 120px 0 90px 0;
+
+  .swiper {
+    width: 100%;
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #e1c458 !important;
+      fill: #e1c458 !important;
+      stroke: #e1c458 !important;
+    }
+  }
+
+  .about_company {
+    background: url("../img/backgrounds/about_company_mobile.jpg") no-repeat center / cover;
+    text-align: center;
+    color: #fff;
+    font-size: 0;
+
+    .bg_shadow {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .about_us {
+      padding: 42px 10px;
+    }
+
+    h2 {
+      font-size: 42px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .line {
+      margin: 50px auto;
+      height: 2px;
+      max-width: 160px;
+      background: #fff;
+    }
+  }
+
+  .our_values {
+  }
+  
+  .services {
+    background: #ebebeb;
+    padding: 20px 0;
+    text-align: center;
+
+    .slide_block-service {
+      @include column;
+      justify-content: flex-start;
+      padding: 40px 30px 36px 30px;
+    }
+
+    h2 {
+      padding: 0;
+      font-size: 30px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 300;
+    }
+  }
+
+  .commodities {
+  }
+  
+  .forwarding {
+  }
+
+  .contacts {
+  }
+}

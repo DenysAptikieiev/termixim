@@ -1,0 +1,33 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+
+  @font-face {
+      font-family: $font_name;
+      font-display: swap;
+      src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+      font-weight: #{$weight};
+      font-style: #{$style};
+  }
+}
+
+:root {
+  --swiper-navigation-size: 20px;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.content {
+  padding: 0 20px;
+}
+
+@import "fonts";
+@import "header";
+@import "main";
+@import "footer";
+

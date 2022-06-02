@@ -1,0 +1,46 @@
+@import "mixins";
+
+header {
+  padding: 20px 0;
+
+  .header_navigation {
+    @include column;
+    align-items: center;
+
+    .logo {
+      width: 245px;
+      margin-bottom: 60px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    nav {
+      @include column;
+      align-items: center;
+      a {
+        color: #000;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 16px;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    & > a {
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 70px;
+      color: #e1c458;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: 600;
+      }
+    }
+  }
+}
