@@ -6,10 +6,24 @@ header {
   .header_navigation {
     @include column;
     align-items: center;
+    @include for_960 {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     .logo {
       width: 245px;
       margin-bottom: 60px;
+      @include for_768 {
+        width: 300px;
+      }
+      @include for_960 {
+        width: 150px;
+        margin-bottom: 0;
+      }
+      @include for_1920 {
+        width: 250px;
+      }
     }
 
     a {
@@ -28,6 +42,29 @@ header {
         &:not(:last-child) {
           margin-bottom: 20px;
         }
+
+        @include for_768 {
+          font-size: 18px;
+          &:not(:last-child) {
+            margin-bottom: 25px;
+          }
+        }
+        @include for_1920 {
+          font-size: 22px;
+        }
+      }
+      @include for_960 {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+
+        a {
+          font-size: 14px;
+          &:not(:last-child) {
+            margin: 0 30px 0 0;
+          }
+        }
       }
     }
     & > a {
@@ -35,11 +72,17 @@ header {
       font-size: 18px;
       font-weight: 500;
       margin-top: 70px;
-      color: #e1c458;
+      color: $color_accent;
       cursor: pointer;
 
       &:hover {
         font-weight: 600;
+      }
+      @include for_768 {
+        font-size: 25px;
+      }
+      @include for_960 {
+        display: none;
       }
     }
   }

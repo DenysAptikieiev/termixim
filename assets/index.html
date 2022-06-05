@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.min.css">
@@ -15,11 +17,11 @@
     @@include('_header.html')
     @@include('_main.html')
     @@include('_footer.html')
+    <a class="back_to_top" href="#header"><img src="./img/icons/top_icon.svg" alt="top"></a>
     <script type="module">
         import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js'
 
-        const swiper = new Swiper('.swiper', {
-            // Optional parameters
+        var swiper = new Swiper('.swiper', {
             direction: 'horizontal',
             loop: true,
 
@@ -35,6 +37,10 @@
             },
             autoHeight: true,
             spaceBetween: 10,
+            allowTouchMove: true,
+            mousewheel: {
+                invert: true,
+            },
         });
     </script>
     <script src="js/app.min.js"></script>

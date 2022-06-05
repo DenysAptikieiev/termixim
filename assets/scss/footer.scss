@@ -1,4 +1,18 @@
+@import "mixins";
 footer {
-  height: 70px;
   background: #000;
+
+  .content_footer {
+    @include center;
+    justify-content: flex-start;
+    a {
+      img {
+        width: 150px;
+        height: auto;
+        @include for_768 {
+          width: 200px;
+        }
+      }
+    }
+  }
 }

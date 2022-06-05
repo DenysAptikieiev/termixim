@@ -9,6 +9,8 @@
   }
 }
 
+@import "mixins";
+
 :root {
   --swiper-navigation-size: 20px;
 }
@@ -16,14 +18,60 @@
 * {
   font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
+  position: relative;
   margin: 0;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  @include for_768 {
+    max-width: 640px;
+  }
+  @include for_960 {
+    max-width: 800px;
+  }
+  @include for_1200 {
+    max-width: 1100px;
+  }
+  @include for_1920 {
+    max-width: 1440px;
+  }
 }
 
 .content {
   padding: 0 20px;
+}
+
+.back_to_top {
+  @include center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  background: $color_accent;
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: .6;
+
+  &:hover {
+    opacity: 1;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    svg {
+      fill: #fff;
+    }
+  }
 }
 
 @import "fonts";
@@ -31,3 +79,13 @@ body {
 @import "main";
 @import "footer";
 
+.email {
+  @include center;
+  text-decoration: none;
+  &::before {
+    content: url('../img/icons/mail.svg');
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
+}
